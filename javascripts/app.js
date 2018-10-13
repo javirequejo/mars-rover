@@ -9,13 +9,17 @@ let rover = {
 function turnLeft(rover){
   if (rover.direction == "N") {
     rover.direction = "W";
+    document.getElementById("rover").style.transform = "rotate(270deg)";
   } else if (rover.direction == "W") {
     rover.direction = "S";
+    document.getElementById("rover").style.transform = "rotate(180deg)";
   } else if (rover.direction == "S") {
     rover.direction = "E"; 
+    document.getElementById("rover").style.transform = "rotate(90deg)";
   }
   else if (rover.direction == "E") {
     rover.direction = "N";
+    document.getElementById("rover").style.transform = "rotate(0deg)";
   }
   console.log("turnLeft was called! Rover is now facing " + rover.direction);
 }
@@ -25,19 +29,23 @@ function turnLeft(rover){
 function turnRight(rover){
   switch (rover.direction) {
     case "N": 
-      rover.direction = "E";
-      break;
+    rover.direction = "E";
+    document.getElementById("rover").style.transform = "rotate(90deg)";
+    break;
     case "E": 
-      rover.direction = "S";
-      break;
+    rover.direction = "S";
+    document.getElementById("rover").style.transform = "rotate(180deg)";
+    break;
     case "S": 
-      rover.direction = "W";
-      break;
+    rover.direction = "W";
+    document.getElementById("rover").style.transform = "rotate(270deg)";
+    break;
     case "W": 
-      rover.direction = "N";
-      break;
+    rover.direction = "N";
+    document.getElementById("rover").style.transform = "rotate(0deg)";
+    break;
     default: 
-      rover.direction = "N";
+    rover.direction = "N";
   }
   console.log("turnRight was called! Rover is now facing " + rover.direction);
 }
