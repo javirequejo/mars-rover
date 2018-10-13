@@ -60,5 +60,7 @@ function moveForward(rover){
       rover.x = 0;
       rover.y = 0;
   }
+  document.getElementById("rover").style.marginTop = rover.y * 10+"%";
+  document.getElementById("rover").style.marginLeft = rover.x * 10+"%";
   console.log("moveForward was called! Rover is now in position " + rover.x + ", " + rover.y);
 }
