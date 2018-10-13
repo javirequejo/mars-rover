@@ -2,6 +2,8 @@
 // ======================
 let rover = {
   direction: "N",
+  x: 0,
+  y: 0
 }
 // ======================
 function turnLeft(rover){
@@ -41,5 +43,22 @@ function turnRight(rover){
 }
 
 function moveForward(rover){
-  console.log("moveForward was called")
+  switch (rover.direction) {
+    case "N": 
+      rover.y--;
+      break;
+    case "E":
+      rover.x++;
+      break;
+    case "S": 
+      rover.y++;
+      break;
+    case "W":
+      rover.x--;
+      break;
+    default: 
+      rover.x = 0;
+      rover.y = 0;
+  }
+  console.log("moveForward was called! Rover is now in position " + rover.x + ", " + rover.y);
 }
