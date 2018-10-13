@@ -1,13 +1,43 @@
 // Rover Object Goes Here
 // ======================
-
+let rover = {
+  direction: "N",
+}
 // ======================
 function turnLeft(rover){
-  console.log("turnLeft was called!");
+  if (rover.direction == "N") {
+    rover.direction = "W";
+  } else if (rover.direction == "W") {
+    rover.direction = "S";
+  } else if (rover.direction == "S") {
+    rover.direction = "E"; 
+  }
+  else if (rover.direction == "E") {
+    rover.direction = "N";
+  }
+  console.log("turnLeft was called! Rover is now facing " + rover.direction);
 }
 
+
+
 function turnRight(rover){
-  console.log("turnRight was called!");
+  switch (rover.direction) {
+    case "N": 
+      rover.direction = "E";
+      break;
+    case "E": 
+      rover.direction = "S";
+      break;
+    case "S": 
+      rover.direction = "W";
+      break;
+    case "W": 
+      rover.direction = "N";
+      break;
+    default: 
+      rover.direction = "N";
+  }
+  console.log("turnRight was called! Rover is now facing " + rover.direction);
 }
 
 function moveForward(rover){
