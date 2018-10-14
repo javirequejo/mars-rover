@@ -17,6 +17,7 @@
                 <li>r = right</li>
                 <li>l = left</li>
                 <li>f = forward</li>
+                <li>b = backward</li>
               </ul>
               <form>
                 <input id="command" type="text" placeholder="e.g. rrfffflfff">
@@ -33,6 +34,9 @@
               </button>
               <button type="button" id="forward" onclick="moveForward(rover)">
                 Forward
+              </button>
+              <button type="button" id="backward" onclick="moveBackward(rover)">
+                Backward
               </button>
               <button type="button" id="right" onclick="turnRight(rover)">
                 Right

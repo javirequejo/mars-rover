@@ -68,7 +68,6 @@ function moveForward (rover) {
     case "E":
       if (rover.x==9) {
       turnRight (rover);
-      
       rover.travelLog += [rover.x, rover.y]; 
       } else rover.x++;
              rover.travelLog += [rover.x, rover.y]; 
@@ -83,10 +82,48 @@ function moveForward (rover) {
     case "W": 
       if (rover.x==0) {
       turnRight (rover);
-      
-      
       rover.travelLog += [rover.x, rover.y]; 
       } else rover.x--;
+             rover.travelLog += [rover.x, rover.y]; 
+      break;
+    default: 
+      rover.x = 0;
+      rover.y = 0;
+  }
+  document.getElementById("rover").style.marginTop = rover.y * 10+"%";
+  document.getElementById("rover").style.marginLeft = rover.x * 10+"%";
+  console.log("moveForward was called! Rover is now in position " + rover.x + ", " + rover.y);
+  console.log("Rover has been in " + rover.travelLog);
+}
+
+function moveBackward (rover) {
+  switch (rover.direction) {
+    case "N":
+      if (rover.y==9) {
+      turnLeft(rover);
+      rover.travelLog += [rover.x, rover.y];
+      } else rover.y++;
+             rover.travelLog += [rover.x, rover.y]; 
+      break;
+    case "E":
+      if (rover.x==0) {
+      turnLeft(rover);
+      rover.travelLog += [rover.x, rover.y]; 
+      } else rover.x--;
+             rover.travelLog += [rover.x, rover.y]; 
+      break;
+    case "S": 
+      if (rover.y==0) {
+      turnLeft(rover);
+      rover.travelLog += [rover.x, rover.y]; 
+      } else rover.y--;
+             rover.travelLog += [rover.x, rover.y]; 
+      break;
+    case "W": 
+      if (rover.x==9) {
+      turnLeft(rover);
+      rover.travelLog += [rover.x, rover.y]; 
+      } else rover.x++;
              rover.travelLog += [rover.x, rover.y]; 
       break;
     default: 
@@ -113,7 +150,9 @@ function commandString () {
       case "f":
         moveForward (rover);
         break;
-
+      case "b":
+        moveBackward (rover);
+        break;
     }
   }
 }
