@@ -61,7 +61,6 @@ function moveForward (rover) {
     case "N": 
       if (rover.y==0) {
       turnRight (rover);
-      rover.x++;
       rover.travelLog += [rover.x, rover.y]; 
       } else rover.y--;
              rover.travelLog += [rover.x, rover.y]; 
@@ -69,7 +68,7 @@ function moveForward (rover) {
     case "E":
       if (rover.x==9) {
       turnRight (rover);
-      rover.y++;
+      
       rover.travelLog += [rover.x, rover.y]; 
       } else rover.x++;
              rover.travelLog += [rover.x, rover.y]; 
@@ -77,7 +76,6 @@ function moveForward (rover) {
     case "S": 
       if (rover.y==9) {
       turnRight (rover);
-      rover.x--;
       rover.travelLog += [rover.x, rover.y]; 
       } else rover.y++;
              rover.travelLog += [rover.x, rover.y]; 
@@ -85,7 +83,8 @@ function moveForward (rover) {
     case "W": 
       if (rover.x==0) {
       turnRight (rover);
-      rover.y--;
+      
+      
       rover.travelLog += [rover.x, rover.y]; 
       } else rover.x--;
              rover.travelLog += [rover.x, rover.y]; 

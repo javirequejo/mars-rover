@@ -1,9 +1,21 @@
+body {
+  width: 100%;
+}
+
+.game {
+  margin: 0 auto;
+}
+
 .board {
   position: absolute;
+  left: 30%;
+  right: 30%;
   width: 500px;
   height: 500px;
   background: url("mars-board.png") no-repeat;
   background-size: cover;
+  margin: 0 auto;
+  border: 5px solid black;
 }
 
 #rover {
