@@ -2,14 +2,14 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  background: url("mars-board.jpeg") no-repeat;
+  background: url("mars-board.png") no-repeat;
   background-size: cover;
 }
 
 #rover {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: url("rover.png") no-repeat;
   background-size: cover;
   
