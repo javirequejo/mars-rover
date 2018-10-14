@@ -59,20 +59,36 @@ function turnRight(rover) {
 function moveForward (rover) {
   switch (rover.direction) {
     case "N": 
-      rover.y--;
-      rover.travelLog += [rover.x, rover.y];
+      if (rover.y==0) {
+      turnRight (rover);
+      rover.x++;
+      rover.travelLog += [rover.x, rover.y]; 
+      } else rover.y--;
+             rover.travelLog += [rover.x, rover.y]; 
       break;
     case "E":
-      rover.x++;
-      rover.travelLog += [rover.x, rover.y];
+      if (rover.x==9) {
+      turnRight (rover);
+      rover.y++;
+      rover.travelLog += [rover.x, rover.y]; 
+      } else rover.x++;
+             rover.travelLog += [rover.x, rover.y]; 
       break;
     case "S": 
-      rover.y++;
-      rover.travelLog += [rover.x, rover.y];
-      break;
-    case "W":
+      if (rover.y==9) {
+      turnRight (rover);
       rover.x--;
-      rover.travelLog += [rover.x, rover.y];
+      rover.travelLog += [rover.x, rover.y]; 
+      } else rover.y++;
+             rover.travelLog += [rover.x, rover.y]; 
+      break;
+    case "W": 
+      if (rover.x==0) {
+      turnRight (rover);
+      rover.y--;
+      rover.travelLog += [rover.x, rover.y]; 
+      } else rover.x--;
+             rover.travelLog += [rover.x, rover.y]; 
       break;
     default: 
       rover.x = 0;
@@ -84,11 +100,11 @@ function moveForward (rover) {
   console.log("Rover has been in " + rover.travelLog);
 }
 
-function commandString (string) {
-
-  for (i=0;i<string.length-1;i++) {
+function commandString () {
+  let command = document.getElementById("command").value;
+  for (i=0;i<command.length-1;i++) {
     
-    switch(string[i]) {
+    switch(command[i]) {
       case "r":
         turnRight (rover);
         break;
