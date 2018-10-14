@@ -19,10 +19,24 @@
 }
 .controls ul {
   list-style-type: none;
+  margin-left: -2.5em;
+}
+
+.controls input {
+  border: 1px solid;
+}
+
+.controls button {
+  border: 1px solid;
 }
 
 .buttons {
   margin-top: 2em;
+}
+
+.buttons button {
+  border: 1px solid;
+
 }
 
 .board {
@@ -33,7 +47,7 @@
   height: 500px;
   background: url("mars-board.png") no-repeat;
   background-size: cover;
-  margin: 0 auto;
+  margin: 2% auto;
   border: 5px solid black;
 }
 
