@@ -1,9 +1,28 @@
-body {
-  width: 100%;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.container {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.game {
-  margin: 0 auto;
+.controls {
+  display: inline-block;
+  width: 70%;
+  padding: 0% 2%;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 3em;
+  margin-right: -2em;
+
+}
+.controls ul {
+  list-style-type: none;
+}
+
+.buttons {
+  margin-top: 2em;
 }
 
 .board {
@@ -24,6 +43,7 @@ body {
   height: 60px;
   background: url("rover.png") no-repeat;
   background-size: cover;
-  
 }
+
+
 
